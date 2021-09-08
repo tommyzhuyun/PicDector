@@ -4,4 +4,4 @@
 ![ColorPicker](/PicDector/Wine1.png)
 ![ColorPicker](/PicDector/Wine2.png)
 
-参照[Binarizer](/PicDector/PicDector/PicAnalyzer/Binarizer.cs)
+过滤用函数：[Binarizer](/PicDector/PicAnalyzer/Binarizer.cs)
