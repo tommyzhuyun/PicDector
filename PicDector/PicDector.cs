@@ -66,8 +66,6 @@ namespace PicDector
                     binarizer?.Dispose();
                     pictureBox1.Refresh();
                 }
-
-
                 CaptureFlag = true;
                 Capturing();
             }
@@ -76,6 +74,7 @@ namespace PicDector
                 CaptureFlag = true;
                 Capturing();
             }
+            ss.Dispose();
         }
 
 

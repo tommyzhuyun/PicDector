@@ -25,6 +25,11 @@ namespace ImageSensor
             DialogResult = DialogResult.Cancel;
         }
 
+        ~ScreenShoter()
+        {
+            DumpPic?.Dispose();
+            ScreenShot?.Dispose();
+        }
 
         private void ScreenShoter_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
@@ -82,5 +87,6 @@ namespace ImageSensor
         {
 
         }
+
     }
 }
