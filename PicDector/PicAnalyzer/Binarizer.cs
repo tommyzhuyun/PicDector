@@ -74,7 +74,7 @@ namespace PicDector.PicAnalyzer
                 {
                     for (int j = 0; j < Height; j++)
                     {
-                        Binarizes[i + j * Width] |= func(DataArray[i + j * Width], threshold) ^ !flag;
+                        Binarizes[i + j * Width] |= func(DataArray[i + j * Width], threshold) ^ flag;
                     }
                 }
             }
@@ -158,7 +158,7 @@ namespace PicDector.PicAnalyzer
                 {
                     for (int j = 0; j < Height; j++)
                     {
-                        Binarizes[i + j * Width] |= func(DataArray[i + j * Width], RangeL, RangeR) ^ !flag;
+                        Binarizes[i + j * Width] |= func(DataArray[i + j * Width], RangeL, RangeR) ^ flag;
                     }
                 }
             }
