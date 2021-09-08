@@ -31,9 +31,5 @@ namespace PicDector.ImageSensor
             }
             return bmp;
         }
-
-
-
-
     }
 }

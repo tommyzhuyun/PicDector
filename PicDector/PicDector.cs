@@ -15,6 +15,7 @@ namespace PicDector
 
         private PicAnalyzer.Binarizer binarizer;
         public Rectangle Range;
+        ColorPicker.SquareBitmap sqbp;
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
@@ -22,7 +23,8 @@ namespace PicDector
             //pictureBox1.Image = Image.FromFile("./HSVRGB.bmp");
             this.TopMost = OnTop.Checked;
             ColorLine.Image = new Bitmap(ColorLine.Width, ColorLine.Height);
-            ColorPicker.SquareBitmap.UpColorLine((Bitmap)ColorLine.Image, new HSV(0, 0, 0), Color.FromArgb(0, 0, 0), HsvRgb.Value, true);
+            sqbp = new ColorPicker.SquareBitmap(Color.FromArgb(0, 0, 0), new HSV(0, 0, 255));
+            sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Value, true);
             
         }
 
@@ -213,19 +215,19 @@ namespace PicDector
                 trackBar2.Maximum = 255;
             }
             if (HueCheck.Checked) 
-                ColorPicker.SquareBitmap.UpColorLine((Bitmap)ColorLine.Image, new HSV(0, 0, 0), Color.FromArgb(0, 0, 0), HsvRgb.Hue, true);
+                sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Hue, true);
             if (SatCheck.Checked)
-                ColorPicker.SquareBitmap.UpColorLine((Bitmap)ColorLine.Image, new HSV(0, 0, 255), Color.FromArgb(0, 0, 0), HsvRgb.Saturation, true);
+                sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Saturation, true);
             if (ValCheck.Checked)
-                ColorPicker.SquareBitmap.UpColorLine((Bitmap)ColorLine.Image, new HSV(0, 0, 0), Color.FromArgb(0, 0, 0), HsvRgb.Value, true);
+                sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Value, true);
             if (BtnCheck.Checked)
-                ColorPicker.SquareBitmap.UpColorLine((Bitmap)ColorLine.Image, new HSV(0, 0, 0), Color.FromArgb(0, 0, 0), HsvRgb.Value, true);
+                sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Value, true);
             if (RedCheck.Checked)
-                ColorPicker.SquareBitmap.UpColorLine((Bitmap)ColorLine.Image, new HSV(0, 0, 0), Color.FromArgb(0, 0, 0), HsvRgb.Red, true);
+                sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Red, true);
             if (GreenCheck.Checked)
-                ColorPicker.SquareBitmap.UpColorLine((Bitmap)ColorLine.Image, new HSV(0, 0, 0), Color.FromArgb(0, 0, 0), HsvRgb.Green, true);
+                sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Green, true);
             if (BlueCheck.Checked)
-                ColorPicker.SquareBitmap.UpColorLine((Bitmap)ColorLine.Image, new HSV(0, 0, 0), Color.FromArgb(0, 0, 0), HsvRgb.Blue, true);
+                sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Blue, true);
             ColorLine.Refresh();
 
             ChangeLock = false;
