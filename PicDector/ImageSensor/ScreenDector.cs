@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace PicDector.ImageSensor
+namespace ImageSensor
 {
     class ScreenDector
     {

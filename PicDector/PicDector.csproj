@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="FastBitmapLib\FastBitmap.cs" />
     <Compile Include="FastBitmapLib\HSV.cs" />
-    <Compile Include="PicAnalyzer\SquareBitmap.cs" />
+    <Compile Include="ColorPicker\SquareBitmap.cs" />
     <Compile Include="PicDector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,8 +78,8 @@
     <Compile Include="ImageSensor\ScreenShoter.Designer.cs">
       <DependentUpon>ScreenShoter.cs</DependentUpon>
     </Compile>
-    <Compile Include="PicAnalyzer\Binarizer.cs" />
-    <Compile Include="PicAnalyzer\BinaryConvert.cs" />
+    <Compile Include="ImageSensor\Binarizer.cs" />
+    <Compile Include="ImageSensor\BinaryConvert.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PicDector.resx">

@@ -3,7 +3,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace PicDector.PicAnalyzer
+namespace ImageSensor
 {
     /// <summary>
     /// 2值化专用

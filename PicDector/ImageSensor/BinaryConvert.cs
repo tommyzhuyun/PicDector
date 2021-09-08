@@ -3,7 +3,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace PicDector.PicAnalyzer
+namespace ImageSensor
 {
     /// <summary>
     /// Based on this site https://nakatsudotnet.blog.fc2.com/blog-entry-19.html
