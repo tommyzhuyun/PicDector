@@ -322,9 +322,9 @@ namespace PicDector
             // ColorLine
             // 
             this.ColorLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ColorLine.Location = new System.Drawing.Point(12, 573);
+            this.ColorLine.Location = new System.Drawing.Point(19, 574);
             this.ColorLine.Name = "ColorLine";
-            this.ColorLine.Size = new System.Drawing.Size(360, 16);
+            this.ColorLine.Size = new System.Drawing.Size(346, 16);
             this.ColorLine.TabIndex = 12;
             this.ColorLine.TabStop = false;
             // 
