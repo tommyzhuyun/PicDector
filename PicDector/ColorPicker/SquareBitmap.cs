@@ -446,7 +446,7 @@ namespace ColorPicker
         public void ColorBox(Image ColorBox)
         {
             Rectangle rect = new Rectangle(-6, -6, 12, 12);//内接圆的正方形大小
-            
+
             int width = ColorBox.Width, height = ColorBox.Height;
             int x = 0, y = 0;
             switch (LastChannel)

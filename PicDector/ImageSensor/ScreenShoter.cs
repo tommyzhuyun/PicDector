@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace PicDector.ImageSensor
+namespace ImageSensor
 {
     public partial class ScreenShoter : Form
     {

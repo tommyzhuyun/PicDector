@@ -117,10 +117,10 @@ namespace ImageSensor
         /// <param name="RangeR">阈值右</param>
         /// <param name="parameter">判断阈值的参数</param>
         /// <param name="ColorInversion">颜色反转：<br/>true时参数小于阈值为黑<br/>false时参数大于阈值为黑</param>
-        public void UpDateFilter(int RangeL,int RangeR, HsvRgb parameter, bool ColorInversion)
+        public void UpDateFilter(int RangeL, int RangeR, HsvRgb parameter, bool ColorInversion)
         {
-            if(RangeR < RangeL)
-            { int d = RangeL;  RangeL = RangeR; RangeR = d; }
+            if (RangeR < RangeL)
+            { int d = RangeL; RangeL = RangeR; RangeR = d; }
 
             switch (parameter)
             {
@@ -238,7 +238,7 @@ namespace ImageSensor
             Bitmap bitmap = new Bitmap(Width, Height, PixelFormat.Format32bppArgb);
 
             int[] OriginalArray;
-            using(FastBitmap fb = DumpPic.FastLock()) 
+            using (FastBitmap fb = DumpPic.FastLock())
             {
                 OriginalArray = fb.DataArray;
             }

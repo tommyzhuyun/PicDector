@@ -1,5 +1,5 @@
 ﻿
-namespace PicDector.ImageSensor
+namespace ImageSensor
 {
     partial class ScreenShoter
     {

@@ -1,5 +1,5 @@
 ﻿using FastBitmapLib;
-using PicDector.ImageSensor;
+using ImageSensor;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -13,7 +13,7 @@ namespace PicDector
             InitializeComponent();
         }
 
-        private PicAnalyzer.Binarizer binarizer;
+        private Binarizer binarizer;
         public Rectangle Range;
         ColorPicker.SquareBitmap sqbp;
 
@@ -25,7 +25,7 @@ namespace PicDector
             ColorLine.Image = new Bitmap(ColorLine.Width, ColorLine.Height);
             sqbp = new ColorPicker.SquareBitmap(Color.FromArgb(0, 0, 0), new HSV(0, 0, 255));
             sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Value, true);
-            
+
         }
 
         private void Start_Click(object sender, EventArgs e)
@@ -46,11 +46,11 @@ namespace PicDector
                     pictureBox1.Image = result;
                     pictureBox1.Refresh();
                 }
-                
+
                 if (ThresholdCheck.Checked)
                 {
                     binarizer?.Dispose();
-                    binarizer = new PicAnalyzer.Binarizer(result);
+                    binarizer = new Binarizer(result);
                     binarizer.UpDateThreshold(trackBar1.Value, GetHsvRgb(), false);
                     pictureBox1.Image = binarizer.ColorBinarized();
                     binarizer?.Dispose();
@@ -60,7 +60,7 @@ namespace PicDector
                 if (RangerCheck.Checked)
                 {
                     binarizer?.Dispose();
-                    binarizer = new PicAnalyzer.Binarizer(result);
+                    binarizer = new Binarizer(result);
                     binarizer.UpDateFilter(trackBar1.Value, trackBar2.Value, GetHsvRgb(), true);
                     pictureBox1.Image = binarizer.ColorBinarized();
                     binarizer?.Dispose();
@@ -71,7 +71,7 @@ namespace PicDector
                 CaptureFlag = true;
                 Capturing();
             }
-            else if(Continue)
+            else if (Continue)
             {
                 CaptureFlag = true;
                 Capturing();
@@ -79,7 +79,7 @@ namespace PicDector
         }
 
 
-        
+
         public bool CaptureFlag = false;
         private void Capturing()
         {  //http://www.clks.jp/csg/gt002.html
@@ -104,10 +104,10 @@ namespace PicDector
                         }
                         if (ThresholdCheck.Checked)
                         {
-                            binarizer = new PicAnalyzer.Binarizer(ScreenDector.ScreenShot(Range));
+                            binarizer = new Binarizer(ScreenDector.ScreenShot(Range));
                             binarizer.UpDateThreshold(trackBar1.Value, GetHsvRgb(), ColorInversion.Checked);
                             pictureBox1.Image?.Dispose();
-                            
+
                             if (ColorFilter.Checked)
                                 pictureBox1.Image = binarizer.ColorFilted();
                             else
@@ -123,7 +123,7 @@ namespace PicDector
                         if (RangerCheck.Checked)
                         {
                             binarizer?.Dispose();
-                            binarizer = new PicAnalyzer.Binarizer(ScreenDector.ScreenShot(Range));
+                            binarizer = new Binarizer(ScreenDector.ScreenShot(Range));
                             binarizer.UpDateFilter(trackBar1.Value, trackBar2.Value, GetHsvRgb(), ColorInversion.Checked);
                             if (ColorFilter.Checked)
                                 pictureBox1.Image = binarizer.ColorFilted();
@@ -135,7 +135,8 @@ namespace PicDector
                             {
                                 textBox1.Text = trackBar1.Value.ToString();
                                 textBox2.Text = trackBar2.Value.ToString();
-                            }else
+                            }
+                            else
                             {
                                 textBox1.Text = trackBar2.Value.ToString();
                                 textBox2.Text = trackBar1.Value.ToString();
@@ -163,9 +164,9 @@ namespace PicDector
 
         private FastBitmapLib.HsvRgb GetHsvRgb()
         {
-            if(HueCheck.Checked)
+            if (HueCheck.Checked)
                 return FastBitmapLib.HsvRgb.Hue;
-            else if(SatCheck.Checked)
+            else if (SatCheck.Checked)
                 return FastBitmapLib.HsvRgb.Saturation;
             else if (ValCheck.Checked)
                 return FastBitmapLib.HsvRgb.Value;
@@ -214,7 +215,7 @@ namespace PicDector
                     trackBar2.Value = 255;
                 trackBar2.Maximum = 255;
             }
-            if (HueCheck.Checked) 
+            if (HueCheck.Checked)
                 sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Hue, true);
             if (SatCheck.Checked)
                 sqbp.UpColorLine((Bitmap)ColorLine.Image, HsvRgb.Saturation, true);
